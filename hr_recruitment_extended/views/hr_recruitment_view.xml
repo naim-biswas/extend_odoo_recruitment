@@ -1,0 +1,37 @@
+<odoo>
+    <record id="hr_applicant_view_form_inherit" model="ir.ui.view">
+        <field name="name">hr.applicant.form.inherit</field>
+        <field name="model">hr.applicant</field>
+        <field name="inherit_id" ref="hr_recruitment.hr_applicant_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//button[@name='create_employee_from_applicant']" position="attributes">
+                <attribute name="groups">hr.group_hr_manager</attribute>
+            </xpath>
+            <field name="department_id" position="after">
+                <field name="manager_id"/>
+            </field>
+            <xpath expr="//sheet" position="inside">
+                <notebook>
+                    <page name="pg_emergency_contacts" string="Emergency Contacts">
+                        <field name="emergency_contact_lines">
+                            <tree string="Emergency Contacts" editable="bottom">
+                                <field name="name"/>
+                                <field name="address"/>
+                                <field name="phone"/>
+                            </tree>
+                        </field>
+                    </page>
+                    <page name="pg_education_info" string="Education Info">
+                        <field name="education_lines">
+                            <tree string="Education Info" editable="bottom">
+                                <field name="institute"/>
+                                <field name="degree_id"/>
+                                <field name="passing_year"/>
+                            </tree>
+                        </field>
+                    </page>
+                </notebook>
+            </xpath>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_hr_applicant_emergency_contact_line,hr.applicant.emergency.contact.line,model_hr_applicant_emergency_contact_line,,1,1,1,1
+access_hr_applicant_education_line,hr.applicant.education.line,model_hr_applicant_education_line,,1,1,1,1
